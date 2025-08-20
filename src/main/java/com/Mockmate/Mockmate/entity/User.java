@@ -1,5 +1,6 @@
 package com.Mockmate.Mockmate.entity;
 
+import com.Mockmate.Mockmate.enums.Level;
 import com.Mockmate.Mockmate.enums.Role;
 import jakarta.persistence.*;
 
@@ -20,6 +21,9 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private Level level;
 
     @ElementCollection
     private java.util.List<String> skills;
@@ -92,5 +96,13 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 }
